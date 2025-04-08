@@ -68,12 +68,16 @@ void testUserInput_DigitLetterValue() {
   ASSERT_EQUAL(expected, actual);
 }
 int main() {
-  /**/ // Создаем тестовый набор
+  // Создаем тестовый набор
   cute::suite s;
   // Добавляем тестовую функцию в набор
   s.push_back(CUTE(testCalcRectangleArea));
+  s.push_back(CUTE(testUserInput_Empty));
+  s.push_back(CUTE(testUserInput_Letter));
+  s.push_back(CUTE(testUserInput_NegativeValue));
+  s.push_back(CUTE(testUserInput_DigitLetterValue));
   // Создаем listener и runner
   cute::ide_listener<> listener;
-  makeRunner(listener)(s, "Test CalcRectangleArea");
+  makeRunner(listener)(s, "All Rectangle Tests");
   return 0;
 }
