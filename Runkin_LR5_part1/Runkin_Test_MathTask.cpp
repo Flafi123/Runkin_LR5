@@ -19,7 +19,54 @@ void testCalcRectangleArea() {
   // сравнение ожидаемого результата с полученным
   ASSERT_EQUAL(expected, actual);
 }
+// тест, проверяющий отсев пустых значений
+void testUserInput_Empty() {
 
+  // исходные данные
+  string str = "";
+  // ожидаемое значение результата работы функции User Input
+  bool expected = false;
+  // получение значения с помощью тестируемого метода
+  bool actual = UserInput(str);
+  // сравнение ожидаемого результата с полученным
+  ASSERT_EQUAL(expected, actual);
+}
+// тест, проверяющий отсев нецифровых символов
+void testUserInput_Letter() {
+  // исходные данные
+  string str = "a";
+  // ожидаемое значение результата работы функции User Input
+  bool expected = false;
+  // получение значения с помощью тестируемого метода
+  bool actual = UserInput(str);
+  // сравнение ожидаемого результата с полученным
+  ASSERT_EQUAL(expected, actual);
+}
+// тест, проверяющий отсев отрицательных значений
+void testUserInput_NegativeValue() {
+
+  // исходные данные
+  string str = "-5";
+  // ожидаемое значение результата работы функции User Input
+  bool expected = false;
+  // получение значения с помощью тестируемого метода
+  bool actual = UserInput(str);
+  // сравнение ожидаемого результата с полученным
+  ASSERT_EQUAL(expected, actual);
+}
+// тест, проверяющий отсев цифро-буквенных значений
+
+void testUserInput_DigitLetterValue() {
+
+  // исходные данные
+  string str = "5a";
+  // ожидаемое значение результата работы функции UserInput
+  bool expected = false;
+  // получение значения с помощью тестируемого метода
+  bool actual = UserInput(str);
+  // сравнение ожидаемого результата с полученным
+  ASSERT_EQUAL(expected, actual);
+}
 int main() {
   /**/ // Создаем тестовый набор
   cute::suite s;
