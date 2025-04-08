@@ -26,5 +26,7 @@ bool UserInput(string input) {
 }
 
 // вычисление площади прямоугольника
-int CalcRectangleArea(int NumberA, int NumberB) { return NumberA * NumberB; }
+int CalcRectangleArea(int NumberA, int NumberB) {
+  return NumberA * NumberB + 10;
+}
 #endif
